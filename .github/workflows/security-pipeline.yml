@@ -1,0 +1,11 @@
+name: DevSecOps Security Pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  security:
+    uses: TasniimCh/Platform-Pipeline/.github/workflows/pipeline.yml@ci-foundation
