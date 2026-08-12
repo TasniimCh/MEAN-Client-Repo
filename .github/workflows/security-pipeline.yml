@@ -1,4 +1,4 @@
-name: DevSecOps Security Pipeline
+name: DevSecOps Pipeline
 
 on:
   push:
@@ -10,3 +10,4 @@ on:
 jobs:
   security:
     uses: TasniimCh/Platform-Pipeline/.github/workflows/pipeline.yml@ci-foundation
+    secrets: inherit
