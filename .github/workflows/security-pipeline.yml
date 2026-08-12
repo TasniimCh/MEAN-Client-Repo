@@ -9,5 +9,5 @@ on:
 
 jobs:
   security:
-    uses: TasniimCh/Platform-Pipeline/.github/workflows/pipeline.yml@ci-foundation
+    uses: TasniimCh/Platform-Pipeline/.github/workflows/pipeline.yml@supply-chain
     secrets: inherit

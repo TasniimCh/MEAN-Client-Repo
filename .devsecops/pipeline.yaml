@@ -1,5 +1,25 @@
 capabilities:
-  secret_detection: true
-  static_analysis: true
-  dependency_analysis: true
-  infrastructure_analysis: false
+  secret_detection: false
+  static_analysis: false
+  dependency_analysis: false
+  infrastructure_analysis: true
+  build: true
+  unit_testing: true
+  integration_testing: false
+
+build:
+  working_directory: .
+  runtime:
+    language: node
+    version: "22"
+    package_manager: null
+  command: null
+
+testing:
+  working_directory: .
+  unit:
+    enabled: false
+    command: null
+  integration:
+    enabled: false
+    command: null
