@@ -2,7 +2,7 @@ capabilities:
   secret_detection: false
   static_analysis: false
   dependency_analysis: false
-  infrastructure_analysis: true
+  infrastructure_analysis: false
   build: true
   unit_testing: true
   integration_testing: false
@@ -23,3 +23,13 @@ testing:
   integration:
     enabled: false
     command: null
+
+container:
+  dockerfile: ./Dockerfile
+  context: .
+  image:
+    name: application
+    tag: null
+  registry:
+    type: dockerhub
+    repository: null
