@@ -6,6 +6,7 @@ capabilities:
   build: true
   unit_testing: true
   integration_testing: false
+  policy_enforcement: true
 
 build:
   working_directory: .
@@ -33,3 +34,8 @@ container:
   registry:
     type: dockerhub
     repository: null
+policy:
+  paths: 
+   - deploy/
+  policy_paths: 
+   - .devsecops/policies/security.rego
