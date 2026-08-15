@@ -6,7 +6,6 @@ deny contains {
     "message": "Container must run as non-root",
 } if {
     input.kind == "Deployment"
-    some container
     container := input.spec.template.spec.containers[_]
     not container.securityContext.runAsNonRoot
 }
