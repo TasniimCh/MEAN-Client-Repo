@@ -6,6 +6,10 @@ capabilities:
   build: true
   unit_testing: true
   integration_testing: false
+  container_build: true
+  container_scan: true
+  sbom: true
+  provenance: true
   policy_enforcement: true
 
 build:
