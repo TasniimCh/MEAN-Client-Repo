@@ -1,16 +1,16 @@
 capabilities:
-  secret_detection: false
-  static_analysis: false
-  dependency_analysis: false
+  secret_detection: true
+  static_analysis: true
+  dependency_analysis: true
   infrastructure_analysis: false
   build: true
   unit_testing: true
   integration_testing: false
-  container_build: true
-  container_scan: true
-  sbom: true
-  provenance: true
-  policy_enforcement: true
+  policy_enforcement: false
+  gitops_update: true
+  image_signing: true
+  admission_control: true
+  cluster_validation: true
 
 build:
   working_directory: .
@@ -23,7 +23,7 @@ build:
 testing:
   working_directory: .
   unit:
-    enabled: false
+    enabled: true
     command: null
   integration:
     enabled: false
@@ -38,8 +38,9 @@ container:
   registry:
     type: dockerhub
     repository: null
+
 policy:
-  paths: 
-   - deploy/
-  policy_paths: 
-   - .devsecops/policies/security.rego
+  paths:
+    - deploy/
+  policy_paths:
+    - .devsecops/policies/
