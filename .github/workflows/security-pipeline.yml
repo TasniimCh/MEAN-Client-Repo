@@ -7,7 +7,13 @@ on:
   pull_request:
   workflow_dispatch:
 
+
 jobs:
-  security:
+  security-pipeline:
+    permissions:
+      contents: read
+      id-token: write
+
     uses: TasniimCh/Platform-Pipeline/.github/workflows/pipeline.yml@risk-advisor
-    secrets: inherit
+    secrets:
+      inherit 
