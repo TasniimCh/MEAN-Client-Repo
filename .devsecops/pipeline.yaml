@@ -6,6 +6,11 @@ capabilities:
   build: true
   unit_testing: true
   integration_testing: false
+  container_build: true
+  container_scan: true
+  sbom: true
+  provenance: true
+  image_publish: true
   policy_enforcement: false
   gitops_update: true
   image_signing: true
@@ -33,14 +38,18 @@ container:
   dockerfile: ./Dockerfile
   context: .
   image:
-    name: application
+    name: mean-application
     tag: null
   registry:
     type: dockerhub
-    repository: null
+    repository: tasniimch/mean-client
 
 policy:
   paths:
     - deploy/
   policy_paths:
     - .devsecops/policies/
+gitops:
+  repository: TasniimCh/MEAN-Client-GitOps
+  ref: main
+  values_file: helm/values.yaml
