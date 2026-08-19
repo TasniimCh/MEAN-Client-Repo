@@ -55,7 +55,7 @@ gitops:
   values_file: helm/values.yaml
   argocd:
     application_name: mean-client
-    path: helm/chart.yaml
+    path: helm
     namespace: dev
     project: default
     sync_policy: manual
