@@ -53,3 +53,31 @@ gitops:
   repository: TasniimCh/MEAN-Client-GitOps
   ref: main
   values_file: helm/values.yaml
+  argocd:
+    application_name: mean-client
+    path: helm/chart.yaml
+    namespace: dev
+    project: default
+    sync_policy: manual
+
+cluster_validation:
+  enabled: true
+  environment: dev
+  namespace: dev
+
+  argocd:
+    enabled: true
+    application_name: mean-client
+    timeout_seconds: 180
+
+  admission:
+    enabled: true
+
+    image_verification:
+      enabled: true
+
+  rollout:
+    enabled: true
+
+  smoke_tests:
+    enabled: true
