@@ -78,6 +78,7 @@ cluster_validation:
 
   rollout:
     enabled: true
+    deployment: mean-client
 
   smoke_tests:
     enabled: true
