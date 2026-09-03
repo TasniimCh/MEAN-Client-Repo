@@ -11,7 +11,7 @@ capabilities:
   sbom: true
   provenance: true
   image_publish: true
-  policy_enforcement: false
+  policy_enforcement: true
   gitops_update: true
   image_signing: true
   admission_control: true
