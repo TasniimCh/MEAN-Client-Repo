@@ -26,7 +26,7 @@ spec:
           image: angular-app:1.0.0
 
           ports:
-            - containerPort: 80
+            - containerPort: 8080
 
           securityContext:
             runAsNonRoot: true
