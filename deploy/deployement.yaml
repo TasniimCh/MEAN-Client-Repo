@@ -4,15 +4,19 @@ metadata:
   name: angular-app
   labels:
     app: angular-app
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: angular-app
+
   template:
     metadata:
       labels:
         app: angular-app
+
     spec:
       securityContext:
         runAsNonRoot: true
@@ -20,11 +24,21 @@ spec:
       containers:
         - name: angular-app
           image: angular-app:1.0.0
+
           ports:
             - containerPort: 80
 
           securityContext:
+            runAsNonRoot: true
             allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
